@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/world/world",
+    "pages/finance/finance",
+    "pages/entertainment/entertainment",
+    "pages/military/military",
+    "pages/sports/sports",
+    "pages/others/others"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "悦读·资讯",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  }
+}
