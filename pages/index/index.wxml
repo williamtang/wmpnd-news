@@ -9,4 +9,16 @@
     <view data-current="5" bindtap='changeTabBar' class="tabbar-cell {{currentTab==5?'on':''}}">体育</view>
     <view data-current="6" bindtap='changeTabBar' class="tabbar-cell {{currentTab==6?'on':''}}">其他</view>
   </view>
+  <view class="graph-summary">
+    <image class="bg-news" src="{{firstImage}}"></image>
+  </view>
+  <view class="news-item" wx:for="{{newsItems}}">
+    <view class="text-wrapper" data-newsId="{{item.id}}" bindtap='onTapDetailContent'>
+      <view class="news-title">{{item.title}}</view> 
+      <!-- <navigator url="/pages/detail/detail" hover-class="navigator-hover">{{item.title}}</navigator> -->
+      <view class="news-source">{{item.source}}</view>
+      <view class="news-date">{{item.date}}</view>
+    </view>
+    <image class="news-pic" src="{{item.picPath}}"></image>
+  </view>
 </view>

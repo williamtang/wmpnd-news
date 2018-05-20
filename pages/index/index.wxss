@@ -1,8 +1,8 @@
 /**index.wxss**/
 .news-wrapper {
   position: relative;
-  padding-bottom: 20rpx;
-  padding-top: 20rpx
+  padding-bottom: 5rpx;
+  padding-top: 5rpx
 }
 
 .tabbar-wrapper {
@@ -25,4 +25,58 @@
 .on { 
   color: #da7c0c;  
   border-bottom: 5rpx solid #da7c0c;
+}
+
+.graph-summary {
+  position: relative;
+  padding-top: 0rpx;
+  padding-bottom: 0rpx; 
+  height: 440rpx;
+}
+
+.bg-news {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: -1
+}
+
+.news-item {
+  display: flex; 
+  align-items: center;
+  height: 165rpx;
+  margin: 0 0rpx;
+  border-bottom: 1px solid rgba(0,0,0,0.1)
+}
+
+.text-wrapper {
+  padding-left: 10rpx;
+  width: 65%;
+  height: 160rpx;
+}
+
+.news-title {
+  font-family: "黑体";
+  font-size: 30rpx;
+  line-height: 40rpx
+}
+
+.news-date {
+  font-size: 28rpx;
+  opacity: 0.6;
+  line-height: 40rpx
+}
+
+.news-source {
+  font-size: 25rpx;
+  opacity: 0.6
+}
+
+.news-pic {
+  width: 33.5%; 
+  height: 160rpx;
+  padding-left: 1%;
+  padding-right: 0.5%;
+  padding-top: 2.5rpx;
+  padding-bottom: 2.5rpx;
 }
