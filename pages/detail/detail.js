@@ -1,11 +1,14 @@
 // pages/detail/detail.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    id: ""
+    id: "",
+    title: "",
+    source: "",
+    time: "",
+    readCount: 0
   },
 
   /**
@@ -48,5 +51,16 @@ Page({
   /* 设置新闻详细页面的内容 */
   setNewsDetail(result) {
     console.log(result)
+    let title = result.title
+    let source = result.source
+    let strDate = new Date(result.date)
+    let time = `${strDate.getHours()}:${strDate.getMinutes()}`
+    let readCount = result.readCount
+    this.setData({
+      title,
+      source,
+      time,
+      readCount
+    })
   }
 })

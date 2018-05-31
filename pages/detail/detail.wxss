@@ -1,1 +1,31 @@
 /* pages/detail/detail.wxss */
+
+.main-title {
+  font-family: "黑体";
+  font-size: 50rpx;
+  line-height: 60rpx;
+  margin-bottom: 20rpx
+}
+
+.sub-title {
+  display: flex; 
+  padding-left: 10rpx;
+  width: 100%;
+}
+
+.news-date {
+  font-size: 35rpx;
+  opacity: 0.6;
+}
+
+.news-source {
+  font-size: 35rpx;
+  opacity: 0.6;
+  padding-right: 15rpx
+}
+
+.read-count {
+  font-size: 35rpx;
+  opacity: 0.6;
+  padding-left: 250rpx
+}

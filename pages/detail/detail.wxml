@@ -1,2 +1,11 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<!-- <text>pages/detail/detail.wxml</text> -->
+
+<view class='title-wrapper'>
+  <view class='main-title'>{{title}}</view>
+  <view class='sub-title'>
+    <view class='news-source'>{{source}}</view>
+    <view class='news-date'>{{time}}</view>
+    <view class='read-count'>阅读 {{readCount}}</view>
+  </view>
+</view>
