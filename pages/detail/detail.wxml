@@ -8,4 +8,7 @@
     <view class='news-date'>{{time}}</view>
     <view class='read-count'>阅读 {{readCount}}</view>
   </view>
+  <view class='content'>
+    <rich-text nodes="{{nodes}}"></rich-text>
+  </view>
 </view>

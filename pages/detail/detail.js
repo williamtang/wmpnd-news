@@ -8,7 +8,8 @@ Page({
     title: "",
     source: "",
     time: "",
-    readCount: 0
+    readCount: 0,
+    nodes: []
   },
 
   /**
@@ -56,11 +57,46 @@ Page({
     let strDate = new Date(result.date)
     let time = `${strDate.getHours()}:${strDate.getMinutes()}`
     let readCount = result.readCount
+    let newsContent = result.content
+
+    let nodes = []
+    for (let i = 0; i < newsContent.length; i++) {
+      // text
+      if (newsContent[i].hasOwnProperty("text")) {
+        nodes.push({
+          name: newsContent[i].type,
+          attrs: {
+            class: 'text-content',
+            style: 'line-height: 25px'
+          },
+          children: [{
+            type: 'text',
+            text: newsContent[i].text
+          }]
+        })
+      }
+
+      // images
+      if (newsContent[i].hasOwnProperty("src")) {
+        nodes.push({
+          name: 'img',
+          attrs: {
+            src: newsContent[i].src,
+            width:"100%",
+            height:"auto"
+          }
+        })
+      }
+    }
+
+    console.log(nodes)
+
     this.setData({
       title,
       source,
       time,
-      readCount
+      readCount,
+      nodes
     })
   }
 })

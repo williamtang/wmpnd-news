@@ -2,7 +2,7 @@
 
 .main-title {
   font-family: "黑体";
-  font-size: 50rpx;
+  font-size: 60rpx;
   line-height: 60rpx;
   margin-bottom: 20rpx
 }
@@ -14,18 +14,22 @@
 }
 
 .news-date {
-  font-size: 35rpx;
+  font-size: 25rpx;
   opacity: 0.6;
 }
 
 .news-source {
-  font-size: 35rpx;
+  font-size: 25rpx;
   opacity: 0.6;
   padding-right: 15rpx
 }
 
 .read-count {
-  font-size: 35rpx;
+  font-size: 25rpx;
   opacity: 0.6;
   padding-left: 250rpx
+}
+
+.text-content {
+  font-size: 35rpx
 }
