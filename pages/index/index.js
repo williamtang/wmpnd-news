@@ -2,7 +2,7 @@
 //获取应用实例
 const app = getApp()
 
-const newsType = ["gn","gj","cj","yl","js","ty","other"]
+const newsTypeMap = ["gn","gj","cj","yl","js","ty","other"]
 
 Page({
   data: {
@@ -11,7 +11,8 @@ Page({
     currentTab: 0,
     firstImage: "",
     newsItems:[1,2,3,4],
-    newsType: "gn"
+    newsType: "gn",
+    navBar: ['国内', '国际', '财经', '娱乐', '军事', '体育', '其他']
   },
 
   onLoad: function() {
@@ -40,16 +41,16 @@ Page({
     if (this.data.currentTab === e.target.dataset.current) {
       // console.log(this.data.currentTab)
       that.setData({
-        newsType: newsType[this.data.currentTab]
+        newsType: newsTypeMap[this.data.currentTab]
       })
       return false;
     } else {
       that.setData({
         currentTab: e.target.dataset.current,
-        newsType: newsType[e.target.dataset.current]
+        newsType: newsTypeMap[e.target.dataset.current]
       })
 
-      // console.log(newsType[this.data.currentTab])
+      // console.log(newsTypeMap[this.data.currentTab])
     }
 
     this.getNewsLists()
@@ -57,7 +58,7 @@ Page({
 
   /* 获得国内头条新闻背景图片 */
   getNewsLists(callback) {
-    console.log(newsType[this.data.currentTab])
+    console.log(newsTypeMap[this.data.currentTab])
     wx.request({
       url: 'https://test-miniprogram.com/api/news/list',
       data: {
@@ -84,7 +85,7 @@ Page({
       newsItems.push({
         date: `${strDate.getHours()}:${strDate.getMinutes()}`,
         title: result[i].title,
-        source: result[i].source,
+        source: result[i].source || "未知来源",
         picPath: result[i].firstImage,
         id: result[i].id
       })

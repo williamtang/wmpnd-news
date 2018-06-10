@@ -26,14 +26,14 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh() {
-    this.getNewsDetail(() => {
-      wx.stopPullDownRefresh()
-    })
-  },
+  // onPullDownRefresh() {
+  //   this.getNewsDetail(() => {
+  //     wx.stopPullDownRefresh()
+  //   })
+  // },
 
   /* 获取新闻详细页面 */
-  getNewsDetail(callback) {
+  getNewsDetail(/*callback*/) {
     wx.request({
       url: 'https://test-miniprogram.com/api/news/detail',
       data: {
@@ -43,17 +43,17 @@ Page({
         let result = res.data.result
         this.setNewsDetail(result)
       },
-      complete: () => {
-        callback && callback()
-      }
+      // complete: () => {
+      //   callback && callback()
+      // }
     })
   },
 
   /* 设置新闻详细页面的内容 */
   setNewsDetail(result) {
-    console.log(result)
+    // console.log(result)
     let title = result.title
-    let source = result.source
+    let source = result.source || "未知来源";
     let strDate = new Date(result.date)
     let time = `${strDate.getHours()}:${strDate.getMinutes()}`
     let readCount = result.readCount
@@ -67,7 +67,7 @@ Page({
           name: newsContent[i].type,
           attrs: {
             class: 'text-content',
-            style: 'line-height: 25px'
+            style: 'line-height: 15px'
           },
           children: [{
             type: 'text',
@@ -81,15 +81,14 @@ Page({
         nodes.push({
           name: 'img',
           attrs: {
-            src: newsContent[i].src,
-            width:"100%",
-            height:"auto"
+            class: 'news-pic',
+            src: newsContent[i].src
           }
         })
       }
     }
 
-    console.log(nodes)
+    // console.log(nodes)
 
     this.setData({
       title,
